@@ -17,6 +17,7 @@ const App = ()=>{
         <Screen 
           name="sign-up" 
           component={Signup} 
+          options={{title: "Create an account"}}
         />
         <Screen name="login" component={Login} />
       </Navigator>
