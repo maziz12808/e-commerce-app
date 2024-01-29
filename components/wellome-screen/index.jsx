@@ -24,7 +24,7 @@ const WellcomeScreen = ()=>{
      ]
 
      const renderItem = ({item})=>(
-          <View style={{flex:1,justifyContent:"center"}}>
+          <View style={{flex:1,justifyContent:"center",alignItems:"center"}}>
                <Image 
                     resizeMode="contain"
                     source={item.image}
@@ -35,7 +35,7 @@ const WellcomeScreen = ()=>{
                          right: item.key === 3 ? -120 : 0
                     }}
                />
-               <View>
+               <View style={{marginVertical:20}}>
                     <Text style={{fontSize: 18,fontWeight: "bold",textAlign: "center"}}>
                          {item.title}
                     </Text>
@@ -46,7 +46,9 @@ const WellcomeScreen = ()=>{
           </View>
      )
      const SkipButton = ()=>(
-          <TouchableOpacity style={{paddingVertical:12,backgroundColor: "#752FFF"}}>
+          <TouchableOpacity 
+               style={{paddingVertical:12,backgroundColor: "#752FFF"}}
+          >
                <Text style={{textAlign:"center",color:"white"}}>Skip</Text>
           </TouchableOpacity>
      )
@@ -84,6 +86,7 @@ const WellcomeScreen = ()=>{
                     bottomButton
                     showNextButton={false}
                     renderDoneButton={DoneButton}
+                    activeDotStyle={{backgroundColor:"#752FFF"}}
                />
           </View>
      )
