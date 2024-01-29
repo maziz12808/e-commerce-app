@@ -1,7 +1,7 @@
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import AppIntroSlider from "react-native-app-intro-slider";
 
-const WellcomeScreen = ()=>{
+const WellcomeScreen = ({navigation})=>{
      const data = [
           {
                key: 1,
@@ -55,6 +55,7 @@ const WellcomeScreen = ()=>{
      const DoneButton = ()=>(
           <View>
                <TouchableOpacity 
+               onPress={()=> navigation.navigate("login")}
                     style={{
                          paddingVertical:12
                          ,backgroundColor: "#752FFF",
@@ -65,6 +66,7 @@ const WellcomeScreen = ()=>{
                     <Text style={{textAlign:"center",color:"white",fontSize:16}}>Login</Text>
                </TouchableOpacity>
                <TouchableOpacity 
+                    onPress={()=>navigation.navigate("sign-up")}
                     style={{
                          paddingVertical:12,
                          backgroundColor: "#752FFF",
