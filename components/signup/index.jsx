@@ -1,6 +1,7 @@
 import { Text,TextInput, TouchableOpacity, View } from "react-native";
-import Icon from "react-native-vector-icons/Ionicons";
-const Signup = ()=>{
+import Social from "../reusable/social";
+
+const Signup = ({navigation})=>{
      const fields = [
           {
                lable: "Fullname",
@@ -46,21 +47,14 @@ const Signup = ()=>{
                     <Text style={{textAlign: 'center', marginBottom: 4}}>By signing up you agree to our privacy</Text>
                     <Text style={{textAlign: 'center', color: '#752FFF'}}>Policy and Terms</Text>
                </View>
-               <View style={{flexDirection: "row", justifyContent:"center",}}>
-                    <TouchableOpacity style={{marginRight:12}}>
-                         <Icon name="logo-facebook" size={32} color="#4267B2" />
-                    </TouchableOpacity>
-                    <TouchableOpacity style={{marginRight:12}}>
-                         <Icon name="logo-google" size={32} color="#F44336" />
-                    </TouchableOpacity>
-                    <TouchableOpacity style={{marginRight:12}}>
-                         <Icon name="logo-twitter" size={32} color="#03A9F4" />
-                    </TouchableOpacity>
-               </View>
-               <View>
-                    <Text style={{textAlign: 'center'}}>
-                         Already have an account? <Text style={{color: '#752FFF'}}>Sign in</Text>
+               <Social />
+               <View style={{flexDirection: "row", justifyContent: "center"}}>
+                    <Text style={{textAlign: 'center',marginRight:12}}>
+                         Already have an account? 
                     </Text>
+                    <TouchableOpacity onPress={()=> navigation.navigate("login")}>
+                         <Text style={{color: '#752FFF'}}>Sign in</Text>
+                    </TouchableOpacity>
                </View>
           </View>
      )
