@@ -5,6 +5,7 @@ import Signup from "./components/signup";
 import Login from "./components/login";
 import Forgot from "./components/forgot";
 import Ott from "./components/ott";
+import Drawer from "./components/drawer";
 
 const { Navigator, Screen} = createNativeStackNavigator();
 
@@ -36,6 +37,11 @@ const App = ()=>{
           name="ott"
           component={Ott}
           options={{title: "verify"}}
+        />
+        <Screen 
+          name="drawer"
+          component={Drawer}
+          options={{headerShown: false}}
         />
       </Navigator>
     </Container>

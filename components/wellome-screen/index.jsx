@@ -47,6 +47,7 @@ const WellcomeScreen = ({navigation})=>{
      )
      const SkipButton = ()=>(
           <TouchableOpacity 
+               onPress={()=> navigation.navigate("drawer")}
                style={{paddingVertical:12,backgroundColor: "#752FFF"}}
           >
                <Text style={{textAlign:"center",color:"white"}}>Skip</Text>
