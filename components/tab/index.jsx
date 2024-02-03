@@ -5,7 +5,7 @@ import Home from "../home";
 import Cart from "../main/cart";
 import Wishlist from "../main/wishlist";
 import Account from "../main/account";
-import ProductView from "../main/product/product-view";
+import Confirm from "../main/confirm";
 
 const {Navigator, Screen } = createBottomTabNavigator();
 
@@ -50,7 +50,7 @@ const Tab = ()=>{
                <Screen name="Cart" component={Cart} options={{headerShown: false}} />
                <Screen name="Wishlist" component={Wishlist} options={{headerShown: false}} />
                <Screen name="Account" component={Account} options={{headerShown: false}} />
-               <Screen name="product-view" component={ProductView} options={{headerShown: false}} />
+               <Screen name="Confirm" component={Confirm} options={{headerShown: false}} />
           </Navigator>
      )
 }
