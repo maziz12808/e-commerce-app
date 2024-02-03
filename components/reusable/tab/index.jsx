@@ -1,8 +1,18 @@
 import { useState } from "react";
 import { Text, TouchableOpacity, View } from "react-native"
+import GestureRecognizor from "react-native-swipe-gestures";
 
 const Tab = ({data,color="#752FFF"})=>{
      const [tabIndex,setTabIndex] = useState(0)
+
+     const onSwipeLeft = ()=>{
+          if(tabIndex < (data.length-1)) return setTabIndex(tabIndex+1)
+          setTabIndex(0)
+     }
+     const onSwipeRight = ()=>{
+          if(tabIndex > 0) return setTabIndex(tabIndex - 1);
+     }
+
      return (
           <View>
                <View style={{flexDirection: "row"}}>
@@ -34,9 +44,15 @@ const Tab = ({data,color="#752FFF"})=>{
                <View style={{flexDirection: "row",marginTop: 6}}>
                     {
                          data.map((item,index)=>(
-                              <View>
-                                   {index == tabIndex &&item.content}
-                              </View>
+                              <GestureRecognizor 
+                                   onSwipeLeft={onSwipeLeft}
+                                   onSwipeRight={onSwipeRight}
+                                   key={index}
+                              >
+                                   <View>
+                                        {index == tabIndex &&item.content}
+                                   </View>
+                              </GestureRecognizor>
                          ))
                     }
                </View>

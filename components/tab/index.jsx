@@ -5,7 +5,7 @@ import Home from "../home";
 import Cart from "../main/cart";
 import Wishlist from "../main/wishlist";
 import Account from "../main/account";
-import ProductView from "../main/product-view";
+import ProductView from "../main/product/product-view";
 
 const {Navigator, Screen } = createBottomTabNavigator();
 
