@@ -1,11 +1,11 @@
-import { Text,TouchableOpacity,View } from "react-native"
+import { TouchableOpacity } from "react-native"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from "react-native-vector-icons/Ionicons";
 import Home from "../home";
 import Cart from "../main/cart";
-import Wishlist from "../main/wishlist";
+import Products from "../main/product";
 import Account from "../main/account";
-import Confirm from "../main/confirm";
+import Wishlist from "../main/wishlist";
 
 const {Navigator, Screen } = createBottomTabNavigator();
 
@@ -25,7 +25,7 @@ const Tab = ()=>{
                color={focused ? "orange" : "gray"}
                />
 
-               if(route.name === "Wishlist")
+               if(route.name === "Products")
                return <Icon 
                name={focused ? "heart" : "heart-outline"} size={24} 
                color={focused ? "orange" : "gray"}
@@ -48,9 +48,10 @@ const Tab = ()=>{
           <Navigator screenOptions={screenOption}>
                <Screen name="Home" component={Home} options={{headerShown: false}} />
                <Screen name="Cart" component={Cart} options={{headerShown: false}} />
-               <Screen name="Wishlist" component={Wishlist} options={{headerShown: false}} />
+               <Screen name="Products" component={Products} options={{headerShown: false}} />
                <Screen name="Account" component={Account} options={{headerShown: false}} />
-               <Screen name="Confirm" component={Confirm} options={{headerShown: false}} />
+               <Screen name="Wishlist" component={Wishlist} options={{headerShown: false}} />
+     
           </Navigator>
      )
 }
